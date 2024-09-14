@@ -1,18 +1,11 @@
 <script setup lang="ts">
-    const props = defineProps({
-        images: {
-                 type: Array,
-                required: true
-            }
-    });
+ const { images } = defineProps<{
+    images: Array<any>;
+  }>();   
 </script>
 
 <template>
-    <component
-      v-for="(imageComponent, index) in images"
-      :is="imageComponent"
-      :key="index"
-    />
+    <component v-for="(imageComponent, index) in images" :is="imageComponent" :key="index"/>
 </template>
 
 <style scoped>
